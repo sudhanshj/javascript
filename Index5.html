@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .box {
+            background-color: #fff;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+
+        }
+
+        .p {
+            margin: 40px;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: justify;
+        }
+
+        .btn {
+            border: none;
+            background-color: antiquewhite;
+            padding: 20px;
+            display: inline-block;
+        }
+
+        p.uppercase {
+            text-transform: uppercase;
+        }
+
+        #btn {
+            color: red;
+        }
+
+        .color {
+            height: 50px;
+            width: 50px;
+            border-radius: 200px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #black {
+            background-color: black;
+        }
+
+        #green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body id="bo">
+    <div class="box">
+        <form action="#">
+            <label for="Domain">Domain</label>
+            <select name="languages" id="domain">
+                <option value="React">React</option>
+                <option value="Angular">Angular</option>
+                <option value="AWS">AWS</option>
+                <option value="golang">Golang</option>
+                <option value="python">Python</option>
+                <option value="Django">Django</option>
+            </select>
+            <input type="submit" value="Submit" />
+        </form>
+        <div class="color" id="red"></div>
+        <div class="color" id="yellow"></div>
+        <div class="color" id="green"></div>
+        <div class="color" id="black"></div>
+
+        <P id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, dignissimos architecto, inventore optio voluptate rem quidem necessitatibus a quibusdam, ut maiores perferendis mollitia facere eveniet commodi quisquam itaque? Iusto, rem dicta assumenda veritatis ex accusantium itaque facere hic necessitatibus nihil alias tempore dolorum facilis suscipit recusandae blanditiis sit saepe consectetur?</P>
+
+            <br /><button class="btn" id="Uppercase">Uppercase</button>
+            <button class="btn" id="Lowercase">Lowercase</button>
+            <button class="btn" id="big">+</button>
+            <button class="btn" id="small">-</button>
+            <input type="color" id="col" />
+        </div>
+    <script>
+           let counter1 = 16;
+        let counter2=16;
+         document.getElementById("red").onclick = function () {
+             document.getElementById("bo").style.backgroundColor = "red"
+         }
+         document.getElementById("yellow").onclick = function () {
+             document.getElementById("bo").style.backgroundColor = "yellow"
+         }
+         document.getElementById("green").onclick = function () {
+             document.getElementById("bo").style.backgroundColor = "green"
+         }
+         document.getElementById("black").onclick = function () {
+             document.getElementById("bo").style.backgroundColor = "black"
+         }
+         document.getElementById("Uppercase").onclick = function(){
+            document.getElementById("text").style.textTransform = "Uppercase";
+        }
+         document.getElementById("Lowercase").onclick = function () {
+             document.getElementById("text").style.textTransform = "Lowercase";
+         };
+         document.getElementById("big").onclick = function () {
+             document.getElementById("text").style.fontSize = "larger";
+         };
+         document.getElementById("small").onclick = function () {
+             document.getElementById("text").style.fontSize = "smaller";
+         };
+         let colorInput = document.getElementById("col");
+         colorInput.addEventListener("input", () => {
+             document.getElementById("text").style.color = colorInput.value;
+         });
+         document.querySelector("#domain").onclick = function(){
+
+           let val = document.querySelector("#domain").value;
+          
+           if(val=="React"){
+
+               document.querySelector("p").innerHTML = "about the React article"
+           }
+           else if(val=="Angular"){
+            document.querySelector("p").innerHTML="about the Angular article"
+           }
+           else if(val="AWS"){
+            document.querySelector("p").innerHTML="about the AWS article"
+           }
+           else if(val="Golang"){
+            document.querySelector("p").innerHTML="about the Golang article"
+           }
+           else if(val="Python"){
+            document.querySelector("p").innerHTML="about the Python article"
+           }
+           else if (val="Django"){
+            document.querySelector("p").innerHTML="about the Django article"
+           }
+        }
+    </script>
+</body>
+
+</html>

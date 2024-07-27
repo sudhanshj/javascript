@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .color-circle {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+      }
+
+      70% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0.9);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const circles = {};
+    const circleSize = 150;
+    const margin = 10;
+    const adjustedSize = circleSize - margin;
+
+    document.addEventListener('mousemove', (e) => {
+      const x = Math.floor(e.clientX / circleSize) * circleSize;
+      const y = Math.floor(e.clientY / circleSize) * circleSize;
+      const key = `${ x }-${ y }`;
+
+      if (circles[key]) {
+        // Update the color of the existing circle
+        circles[key].style.backgroundColor = getRandomColor();
+      } else {
+        // Create a new circle
+        const circle = document.createElement('div');
+        circle.className = 'color-circle';
+        circle.style.left = `${ x + margin / 2 }px`;
+        circle.style.top = `${ y + margin / 2 }px`;
+        circle.style.borderWidth = `${ Math.floor(Math.random() * 5) }px`;
+        circle.style.borderColor = getRandomColor();
+        circle.style.backgroundColor = getRandomColor();
+        circle.style.width = `${ adjustedSize + Math.floor(Math.random() * 20) } px`;
+        circle.style.height = `${ adjustedSize + Math.floor(Math.random() * 20) } px`;
+        circle.style.opacity = Math.random();
+        document.body.appendChild(circle);
+        circles[key] = circle;
+      }
+    });
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+</body>
+
+</html>

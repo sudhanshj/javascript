@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="tem">
+    <input type="text" id="tem1">
+    <select name="" id="selecting">
+        <option value="Add" class="input">Add</option>
+        <option value="Multi" class="input">Multi</option>
+        <option value="Divide" class="input">Divide</option>
+        <option value="Minu" class="input">Minu</option>
+    </select>
+    <script>
+
+        document.getElementById("selecting").onclick=function(){
+            let a = document.getElementById("tem").value;
+            let b = document.getElementById("tem1").value;
+            let value = document.getElementById("selecting").value;
+             if(value == "Add"){
+             let c = a+b
+             console.log(c)
+             }
+            else if(value == "Multi"){
+             let c = a*b
+             console.log(c)
+             }
+             else if(value == "Divide"){
+             let c = a/b
+             console.log(c)
+             }
+             else{
+                 let c = a-b
+                 console.log(c)
+             }
+        }
+    </script>
+</body>
+</html>

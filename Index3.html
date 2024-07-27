@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height:300px;
+            border: 2px solid black;
+        }
+        .box1{
+            width: 800px;
+            height:200px;
+            border:2px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="text" rows="10" cols="20"></textarea><br><br>
+    <h1>Css Properties</h1>
+    <input type="text" class="inp" placeholder="color">
+    <input type="text" class="inp"placeholder="background-color">
+    <input type="number" class="inp" placeholder="fontsize"><br><br>
+    <div class="text" id="text1"></div>
+
+    <div class="box1" id="m"></div>
+    <script>
+        document.getElementById("text").oninput=function(){
+            
+            let text = document.getElementById("text").value;
+            console.log(text)
+            document.getElementById("m").innerHTML=text;
+        }
+        document.getElementsByClassName("inp").onclick=function(){
+            let inp = document.getElementsByClassName("inp").style.color="color";
+            console.log(inp)
+            document.getElementsByClassName("inp").innerHTML=text;
+        }
+    </script>
+    
+</body>
+</html>
